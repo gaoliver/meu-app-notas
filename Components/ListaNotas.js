@@ -1,23 +1,27 @@
 import React from "react";
-import { Alert, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Alert, StyleSheet, Text, TouchableOpacity, Vibration, View } from "react-native";
 
 const ListaNotas = (props) => {
+
+  const excluirAlert = () => {
+    Vibration.vibrate(50)
+    Alert.alert(
+      "Excluir",
+      "Deseja excluir a nota?",
+      [
+        {
+          text: 'Não'
+        },
+        {
+          text: 'Sim',
+          onPress: props.onDelete.bind(this, props.id)
+        },
+      ]
+      )
+  }
+
   return (
-    <TouchableOpacity style={styles.nomeBotao} onPress={props.modalOpen} onLongPress={ () =>
-        Alert.alert(
-          "Excluir",
-          "Deseja excluir a nota?",
-          [
-            {
-              text: 'Não'
-            },
-            {
-              text: 'Sim',
-              onPress: props.onDelete.bind(this, props.id)
-            }
-          ]
-          )
-        }>
+    <TouchableOpacity style={styles.nomeBotao} onPress={props.modalOpen} onLongPress={excluirAlert}>
       <Text style={styles.NoteTitle}>{props.title}</Text>
     </TouchableOpacity>
   );
