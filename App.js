@@ -25,6 +25,9 @@ export default function App() {
   const [Notas, setNotas] = useState([]);
 
   const adicionarNota = (tituloNota) => {
+    if (tituloNota.length === 0) {
+      return;
+    }
     setNotas((notasAtuais) => [
       ...notasAtuais,
       { id: Math.random().toString(), value: tituloNota },
@@ -51,6 +54,7 @@ export default function App() {
             value={inputNota}
             onPress={inputNota}
           />
+
           <FlatList
             inverted
             style={styles.NotesField}
@@ -102,13 +106,13 @@ export default function App() {
                     sapien et nunc volutpat accumsan. Vestibulum faucibus odio
                     elit, vel rhoncus quam tincidunt at. Suspendisse consequat
                     sapien a dolor tempor egestas.
-                    {"\n\n"}Nullam non euismod
-                    velit, sit amet bibendum metus. Nam vulputate sagittis
-                    condimentum. In hac habitasse platea dictumst. Suspendisse
-                    sed ligula sit amet ipsum tincidunt cursus. Fusce aliquet
-                    nisl non scelerisque ornare. Aliquam interdum hendrerit
-                    diam, imperdiet tincidunt felis porttitor eget. Nunc
-                    fermentum euismod neque, ut lacinia ante venenatis a.
+                    {"\n\n"}Nullam non euismod velit, sit amet bibendum metus.
+                    Nam vulputate sagittis condimentum. In hac habitasse platea
+                    dictumst. Suspendisse sed ligula sit amet ipsum tincidunt
+                    cursus. Fusce aliquet nisl non scelerisque ornare. Aliquam
+                    interdum hendrerit diam, imperdiet tincidunt felis porttitor
+                    eget. Nunc fermentum euismod neque, ut lacinia ante
+                    venenatis a.
                   </Text>
                 </View>
               </View>
@@ -179,5 +183,5 @@ const styles = StyleSheet.create({
   },
   NotaCampoText: {
     color: "#555",
-  }
+  },
 });
