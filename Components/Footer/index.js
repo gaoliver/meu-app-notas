@@ -8,7 +8,7 @@ const Footer = () => {
     <View style={styles.footer}>
       <Text style={styles.footerText}>by</Text>
       <Text
-        onPress={Linking.openURL("https://instagram.com/eugaoliver")}
+        onPress={() => Linking.openURL("https://instagram.com/eugaoliver")}
         style={styles.footerLinkText}
       >
         @eugaoliver
