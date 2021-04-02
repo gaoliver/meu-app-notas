@@ -1,4 +1,5 @@
 # Meu App de Notas
+## Versão 1.0
 
 Este é app foi desenvolvido pra testar alguns conceitos de salvamento de dados localmente. Durante o desenvolvimento a fim de aprendizado, novas ideias surgiram, o que me possibilitou criar um novo projeto em cima deste, onde atualizaões furutas trarão enormes melhorias.
 
