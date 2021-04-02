@@ -22,11 +22,12 @@
         "android": {
             "adaptiveIcon": {
                 "foregroundImage": "./assets/images/adaptive-icon.png",
-                "backgroundColor": "#FFFFFF"
-            }
+                "backgroundColor": "#a3a5af"
+            },
+            "package": "com.gaoliver.meuappnotas"
         },
         "web": {
-            "favicon": "./assets/images/favicon.png"
+            "favicon": "./assets/images/favicon.jpeg"
         }
     }
 }
