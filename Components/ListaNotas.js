@@ -1,28 +1,11 @@
 import React from "react";
-import { Alert, StyleSheet, Text, TouchableOpacity, Vibration, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
 const ListaNotas = (props) => {
-
-  const excluirAlert = () => {
-    Vibration.vibrate(50)
-    Alert.alert(
-      "Excluir",
-      "Deseja excluir a nota?",
-      [
-        {
-          text: 'Não'
-        },
-        {
-          text: 'Sim',
-          onPress: props.onDelete.bind(this, props.id)
-        },
-      ]
-      )
-  }
-
   return (
-    <TouchableOpacity style={styles.nomeBotao} onPress={props.modalOpen} onLongPress={excluirAlert}>
+    <TouchableOpacity style={styles.nomeBotao} onPress={props.modalOpen} onLongPress={props.excluir}>
       <Text style={styles.NoteTitle}>{props.title}</Text>
+      <Text style={styles.datetime}>{props.data}</Text>
     </TouchableOpacity>
   );
 };
@@ -36,12 +19,20 @@ const styles = StyleSheet.create({
   },
   nomeBotao: {
     width: "94%",
-    paddingVertical: 20,
+    paddingVertical: 10,
     paddingHorizontal: "2%",
     alignItems: "center",
     alignSelf: "center",
     marginVertical: 3,
-    backgroundColor: "#fff",
+    backgroundColor: "#eee",
     borderRadius: 20,
+    elevation: 5,
+  },
+  datetime: {
+    color: "#aaa",
+    fontSize: 13,
+    marginLeft: 10,
+    marginTop: 5,
+    fontStyle: "italic"
   }
 });
