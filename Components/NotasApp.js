@@ -9,6 +9,7 @@ import {
   Vibration,
   Alert,
   Button,
+  View,
 } from "react-native";
 import moment from "moment";
 import AsyncStorage from "@react-native-community/async-storage";
@@ -53,7 +54,9 @@ export default function App() {
     AsyncStorage.setItem("NOTAS", JSON.stringify(Notas))
       .then(() => console.log("\n\nSalvo com sucesso"))
       .finally(() => console.log("NOTAS: " + JSON.stringify(Notas) + "\n\n"));
-    state.update !== null ? AsyncStorage.setItem("state", state.update.toString()) : null;
+    state.update !== null
+      ? AsyncStorage.setItem("state", state.update.toString())
+      : null;
   }, [state]);
 
   // Salvar nota
@@ -62,10 +65,12 @@ export default function App() {
       return;
     }
 
-    setNotas((notasAtuais) => [
-      ...notasAtuais,
-      { id: Math.random().toString(), ...inputNota },
-    ]);
+    // setNotas((notasAtuais) => [
+    //   ...notasAtuais,
+    //   { id: Math.random().toString(), ...inputNota },
+    // ]);
+
+    Notas.unshift({ id: Math.random().toString(), ...inputNota })
 
     setInputNota({
       titulo: "",
@@ -149,11 +154,14 @@ export default function App() {
         />
 
         <FlatList
-          inverted
+          ListFooterComponent={
+            <View style={{ width: "100%", height: 20 }}></View>
+          }
+          fadingEdgeLength={50}
           style={styles.NotesField}
           contentContainerStyle={{
             flexGrow: 1,
-            justifyContent: "flex-end",
+            justifyContent: "flex-start",
           }}
           persistentScrollbar
           data={Notas}
@@ -217,7 +225,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   },
   NotesField: {
-    maxHeight: Dimensions.get("screen").height - 85,
+    height: Dimensions.get("screen").height - 85,
     width: Dimensions.get("screen").width,
     marginTop: 5,
   },

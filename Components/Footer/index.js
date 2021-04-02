@@ -7,7 +7,12 @@ const Footer = () => {
   return (
     <View style={styles.footer}>
       <Text style={styles.footerText}>by</Text>
-      <Text style={styles.footerLinkText}>@eugaoliver</Text>
+      <Text
+        onPress={() => Linking.openURL("https://instagram.com/eugaoliver")}
+        style={styles.footerLinkText}
+      >
+        @eugaoliver
+      </Text>
     </View>
   );
 };
