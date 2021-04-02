@@ -20,7 +20,7 @@ const Header = (props) => {
         />
         <TouchableOpacity
           style={styles.Adicionar}
-          onPress={props.adicionarNotaBtn.bind(this, props.onPress)}
+          onPress={props.adicionarNotaBtn.bind(this, props.note)}
         >
           <Text style={styles.TextBtn}>Adicionar</Text>
         </TouchableOpacity>
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     alignSelf: "center",
     marginVertical: 3,
-    backgroundColor: "#fff7",
+    backgroundColor: "#fff3",
     borderRadius: 20,
     overflow: 'hidden'
   },
