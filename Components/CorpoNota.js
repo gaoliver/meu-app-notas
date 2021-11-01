@@ -13,6 +13,7 @@ const CorpoNota = (props) => {
   return (
     <Modal
       isVisible={props.visible}
+      statusBarTranslucent
     >
       <View style={styles.ModalCorpo}>
         <TouchableWithoutFeedback onPress={props.close}>
