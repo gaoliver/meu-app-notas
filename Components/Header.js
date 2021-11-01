@@ -17,13 +17,9 @@ const Header = (props) => {
           placeholder="Adicionar anotação"
           onChangeText={props.onChangeText}
           value={props.value}
+          textAlign="center"
+          onSubmitEditing={props.adicionarNotaBtn.bind(this, props.note)}
         />
-        <TouchableOpacity
-          style={styles.Adicionar}
-          onPress={props.adicionarNotaBtn.bind(this, props.note)}
-        >
-          <Text style={styles.TextBtn}>Adicionar</Text>
-        </TouchableOpacity>
       </View>
     </View>
   );
@@ -38,18 +34,10 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   Input: {
-    width: "72%",
+    width: "100%",
     fontSize: 20,
     justifyContent: "center",
-    marginLeft: "3%",
-    marginRight: "2.1%",
-  },
-  Adicionar: {
-    width: "23%",
-    height: '100%',
-    backgroundColor: "#08ff",
-    alignItems: "center",
-    justifyContent: "center",
+    marginHorizontal: "3%",
   },
   TextBtn: {
     color: "#fff",
@@ -65,6 +53,6 @@ const styles = StyleSheet.create({
     marginVertical: 3,
     backgroundColor: "#fff3",
     borderRadius: 20,
-    overflow: 'hidden'
+    overflow: "hidden",
   },
 });

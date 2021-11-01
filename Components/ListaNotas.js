@@ -24,9 +24,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     alignSelf: "center",
     marginVertical: 3,
-    backgroundColor: "#eee",
+    backgroundColor: "#fff",
     borderRadius: 20,
-    elevation: 5,
+    elevation: 3,
+    shadowOffset: {
+      height: 2,
+      width: 0
+    },
+    shadowOpacity: 0.6,
+    shadowRadius: 3
   },
   datetime: {
     color: "#aaa",

@@ -207,7 +207,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: Dimensions.get("screen").width,
-    backgroundColor: "#aaa",
     paddingHorizontal: 10,
     paddingTop: 30,
     alignItems: "center",
