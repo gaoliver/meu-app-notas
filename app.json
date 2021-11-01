@@ -1,33 +1,35 @@
 {
-    "expo": {
-        "name": "Meu App de Notas",
-        "slug": "meu-app-notas",
-        "version": "1.0.0",
-        "orientation": "portrait",
-        "icon": "./assets/images/icon.png",
-        "splash": {
-            "image": "./assets/images/splash.png",
-            "resizeMode": "contain",
-            "backgroundColor": "#a3a5af"
-        },
-        "updates": {
-            "fallbackToCacheTimeout": 0
-        },
-        "assetBundlePatterns": [
-            "**/*"
-        ],
-        "ios": {
-            "supportsTablet": true
-        },
-        "android": {
-            "adaptiveIcon": {
-                "foregroundImage": "./assets/images/adaptive-icon.png",
-                "backgroundColor": "#a3a5af"
-            },
-            "package": "com.gaoliver.meuappnotas"
-        },
-        "web": {
-            "favicon": "./assets/images/favicon.jpeg"
-        }
-    }
+  "expo": {
+    "name": "Meu App de Notas",
+    "slug": "meu-app-notas",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#a3a5af"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#a3a5af"
+      },
+      "package": "com.gaoliver.meuappnotas"
+    },
+    "web": {
+      "favicon": "./assets/images/favicon.jpeg"
+    },
+    "description": "Notes app, for personal studying.",
+    "githubUrl": "https://github.com/gaoliver/meu-app-notas"
+  }
 }
