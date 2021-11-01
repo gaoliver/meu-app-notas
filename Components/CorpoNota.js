@@ -11,15 +11,13 @@ import {
 
 const CorpoNota = (props) => {
   return (
-    <>
-      <Modal
-        visible={props.visible}
-        transparent={true}
-        animationType="fade"
-        statusBarTranslucent={true}
-      >
-        <View style={styles.ModalFundo}></View>
-      </Modal>
+    <Modal
+      visible={props.visible}
+      transparent={true}
+      animationType="fade"
+      statusBarTranslucent={true}
+    >
+      <View style={styles.ModalFundo}></View>
 
       <Modal
         visible={props.visible}
@@ -38,7 +36,9 @@ const CorpoNota = (props) => {
                 value={props.titulo}
                 onChangeText={(text) => props.onChangeTitle(text)}
               />
-              <Text style={styles.NotaDate}>{props.data + " " + props.hora}</Text>
+              <Text style={styles.NotaDate}>
+                {props.data + " " + props.hora}
+              </Text>
             </View>
             <View style={styles.NotaCampo}>
               <TextInput
@@ -55,7 +55,7 @@ const CorpoNota = (props) => {
           </View>
         </View>
       </Modal>
-    </>
+    </Modal>
   );
 };
 
@@ -86,7 +86,6 @@ const styles = StyleSheet.create({
     height: 50,
     paddingTop: 10,
     marginTop: 0,
-    // backgroundColor: "#f5f5f5",
   },
   NotaTitle: {
     width: "80%",

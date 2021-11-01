@@ -12,7 +12,7 @@ import {
   View,
 } from "react-native";
 import moment from "moment";
-import AsyncStorage from "@react-native-community/async-storage";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import ListaNotas from "./ListaNotas";
 import Header from "./Header";
@@ -64,11 +64,6 @@ export default function App() {
     if (tituloNota.length === 0) {
       return;
     }
-
-    // setNotas((notasAtuais) => [
-    //   ...notasAtuais,
-    //   { id: Math.random().toString(), ...inputNota },
-    // ]);
 
     Notas.unshift({ id: Math.random().toString(), ...inputNota })
 
@@ -203,12 +198,6 @@ export default function App() {
           }
           onSave={() => salvarNota()}
         />
-        {/* <Button
-          title="Clear"
-          onPress={() => {
-            AsyncStorage.clear().then(console.log("Dados locais limpos."));
-          }}
-        /> */}
       </SafeAreaView>
     </TouchableWithoutFeedback>
   );
